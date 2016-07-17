@@ -1,21 +1,20 @@
 # Configurable Form with Plain Javascript
 
-How to run this project
+How to run this project<br />
 
-Download the zip file at the location (parent folder) where you want have your project
-Extrat the zip file
-Open the extracted folder path in terminal and run follwing commands: 
-(i) sudo npm install
-(ii) npm start
-(iii) Hit "http:http://0.0.0.0:3000/" on your browser
+Download the zip file at the location (parent folder) where you want have your project<br />
+Extrat the zip file<br />
+Open the extracted folder path in terminal and run follwing commands: <br />
+(i) sudo npm install<br />
+(ii) npm start<br />
+(iii) Hit "http:http://0.0.0.0:3000/" on your browser<br />
 
-
-General usage guide:
-1. First save the configurations from Admin Panel
-2. Without saving them User Panel is not allowed to use
-3. In the Admin panel set all the field rules also these rules also have validation check as well
-4. If we donot set any rules and save the configurations, default configuration rules will be applied
-5. Default configuration
+General usage guide:<br />
+1. First save the configurations from Admin Panel<br />
+2. Without saving them User Panel is not allowed to use<br />
+3. In the Admin panel set all the field rules also these rules also have validation check as well<br />
+4. If we donot set any rules and save the configurations, default configuration rules will be applied<br />
+5. Default configuration<br /><br /><br />
 {
   "userName": {
     "maxLen": 10,
