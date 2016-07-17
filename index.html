@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+    <head>      
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class="col-md-12 logo">
+            <ul class="nav nav-pills nav-justified">
+                <li role="presentation" id="adminPanelBtn" class="active"><a href="#">Admin Panel</a></li>
+                <li role="presentation" id="userPanelBtn" class="disabled"><a href="#">User Panel</a></li>
+            </ul>
+        </div>
+        <div class="col-md-12" id="adminPanel">
+            <div class="form-horizontal">
+                <label>Username</label>
+                <label>Rules:</label>
+                <span id="errorMsgUsername"></span><br>
+                <div class="form-group">
+                    <label for="maxLengthUserName" class="col-md-2 control-label">Max length</label>
+                    <div class="col-md-3">
+                      <input type="number" min="1" class="form-control" id="maxLengthUserName" placeholder="maxlen" onblur="validate(maxLengthUserName)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="specialCharacterUserName" class="col-md-2 control-label">Special Charater Allowed</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" id="specialCharacterUserName" placeholder="Special Charater Allowed in Username" onblur="validate(specialCharacterUserName)" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" id="optionalRequired"> Optional
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="errMsgUserName" class="col-md-2 control-label">Error Message</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" id="errMsgUserName" placeholder="Type your error msg">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sucMsgUserName" class="col-md-2 control-label">Success Message</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" id="sucMsgUserName" placeholder="Type your success msg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal">
+                <label>Password</label>
+                <label>Rules:</label>
+                <span id="errorMsgPwd"></span><br>
+                <div class="form-group">
+                    <label for="minLengthPwd" class="col-md-2 control-label">Min length</label>
+                    <div class="col-md-3">
+                      <input type="number" min="1" class="form-control" id="minLengthPwd" placeholder="minlen" onblur="validate(minLengthPwd)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="maxLengthPwd" class="col-md-2 control-label">Max length</label>
+                    <div class="col-md-3">
+                      <input type="number" class="form-control" id="maxLengthPwd" placeholder="maxlen" onblur="validate(maxLengthPwd)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="specialCharacterPwd" class="col-md-2 control-label">Special Charater Allowed</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" id="specialCharacterPwd" placeholder="Special Charater Allowed in Password" onblur="validate(specialCharacterPwd)" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="errMsgPwd" class="col-md-2 control-label">Error Message</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" id="errMsgPwd" placeholder="Type your error msg">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sucMsgPwd" class="col-md-2 control-label">Success Message</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" id="sucMsgPwd" placeholder="Type your success msg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal">
+                <label>Name</label>
+                <label>Rules:</label>
+                <span id="errorMsgName"></span><br>
+                <div class="form-group">
+                    <label for="alphabetOnlyName" class="col-md-2 control-label">Allowed Alphabets</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" id="alphabetOnlyName" placeholder="Set of alphabets allowed" onblur="validate(alphabetOnlyName)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" id="oneSpaceAllowed"> One space allowed for firstname and last name
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" id="maxLenlimit40"> Max length is 40
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="errMsgName" class="col-md-2 control-label">Error Message</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" id="errMsgName" placeholder="Type your error msg">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sucMsgName" class="col-md-2 control-label">Success Message</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" id="sucMsgName" placeholder="Type your success msg">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-horizontal">
+                <label>Date</label>
+                <label>Rules:</label>
+                <span id="errorMsgDate"></span><br>
+                <div class="form-group">
+                    <label for="dateFormat" class="col-md-2 control-label">Date format</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" id="dateFormat" placeholder="dd/mm/yyyy" 
+                      onblur="validate(dateFormat)">
+                    </div>
+                    <div class="col-md-7 availableDateFormats">Available date formats: ['YYYY-MM-DD', 'YYYY/MM/DD', 'DD/MM/YYYY','DD-MM-YYYY']</div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" id="specailcharChange"> Special char can be changed
+                        </label>
+                      </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="errMsgDate" class="col-md-2 control-label">Error Message</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" id="errMsgDate" placeholder="Type your error msg">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="sucMsgDate" class="col-md-2 control-label">Success Message</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" id="sucMsgDate" placeholder="Type your success msg">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 saveConfig">
+                <button type="button" class="btn btn-primary" id="saveConfigBtn">Save These Configurations</button>
+            </div>
+
+        </div>
+        <div class="col-md-12" id="userPanel" style="display: none">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="userName" class="col-md-2 control-label">User name</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" id="userName" placeholder="username"
+                       onblur="validateUserInput(userName)" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="fullName" class="col-md-2 control-label">Name</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" id="fullName" placeholder="name" 
+                      onblur="validateUserInput(fullName)" >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="dateUser" class="col-md-2 control-label">Date</label>
+                    <div class="col-md-3">
+                      <input type="text" class="form-control" id="dateUser" placeholder="date" 
+                      onblur="validateUserInput(dateUser)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="pwd" class="col-md-2 control-label">Password</label>
+                    <div class="col-md-3">
+                      <input type="password" class="form-control" id="pwd" placeholder="password"
+                      onblur="validateUserInput(pwd)" >
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="errorMsgUser">
+            </div>
+        </div>
+    </body>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="dist/main.min.js"></script>
+</html>

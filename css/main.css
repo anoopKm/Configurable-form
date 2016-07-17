@@ -1,0 +1,41 @@
+html {
+    position: relative;
+    min-height: 100%;
+    max-width: 100%;
+}
+body {
+    overflow-x: hidden;
+    background-color: #fff;
+}
+.logo {
+    font-family: monospace;
+    background-color: #ccc;
+    text-align: left;
+    padding-bottom: 5px;
+}
+.nav-pills{
+    margin-top: 4px;
+}
+#adminPanel, #userPanel{
+    margin-top: 3%;
+}
+#adminPanel > .form-horizontal{
+    border-bottom: 1px solid black;
+}
+.saveConfig{
+    margin: 25px;
+    text-align: center;
+}
+#errorMsgAdmin{
+    text-align: center;
+    font-weight: 900;
+    text-align: center;
+}
+#errorMsgUser{
+    text-align: center;
+    font-weight: 900;
+    text-align: center;
+}
+.availableDateFormats{
+    color: #777;
+}
